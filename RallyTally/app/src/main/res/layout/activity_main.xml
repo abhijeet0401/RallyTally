@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:opencv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="match_parent">
+
+    <com.abhijeet.rallytally.JavaCameraViewEx
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_margin="0dp"
+        android:id="@+id/view"
+        opencv:camera_id="back"
+        android:layout_weight="3"/>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:minWidth="200sp"
+        android:layout_weight="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/buttonSnapshot"
+                    android:layout_gravity="center_vertical"
+                    style="?android:attr/buttonStyleSmall"
+                    android:text="@string/takeSnapShot"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnResetFocus"
+                    android:layout_gravity="center_vertical"
+                    style="?android:attr/buttonStyleSmall"
+                    android:text="@string/resetFocus"/>
+
+            </LinearLayout>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkFlash"
+                android:text="@string/flashOn"/>
+
+            <include layout="@layout/plus_minus_counter"
+                android:layout_width="match_parent"
+                android:id="@+id/includeWrongItems"
+                android:layout_height="wrap_content"/>
+
+            <include layout="@layout/plus_minus_counter"
+                android:layout_width="match_parent"
+                android:id="@+id/includeUncountedItems"
+                android:layout_height="wrap_content"/>
+
+            <include layout="@layout/extended_seek"
+                android:layout_width="match_parent"
+                android:id="@+id/includeMinRadius"
+                android:layout_height="wrap_content"/>
+
+            <include layout="@layout/extended_seek"
+                android:layout_width="match_parent"
+                android:id="@+id/includeMaxRadius"
+                android:layout_height="wrap_content"/>
+
+            <include layout="@layout/extended_seek"
+                android:layout_width="match_parent"
+                android:id="@+id/includeMinDistance"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
